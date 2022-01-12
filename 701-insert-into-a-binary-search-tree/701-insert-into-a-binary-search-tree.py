@@ -14,11 +14,13 @@ class Solution:
             if val > curr.val:
                 if not curr.right:
                     curr.right = TreeNode(val)
+                    break
                 else:
                     stack.append(curr.right)
             else:
                 if not curr.left:
                     curr.left = TreeNode(val)
+                    break
                 else:
                     stack.append(curr.left)
         return root
