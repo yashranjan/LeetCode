@@ -6,5 +6,6 @@ class Solution:
             if i in hashSet:
                 return True
             hashSet.add(i)
+        
         return False
         
