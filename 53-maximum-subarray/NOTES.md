@@ -1,1 +1,2 @@
 1) For calculating the indices of the sub-array, keep two variables, say st and et, and whenever you get currSum as 0(before adding the curr value to it) update st as the curr index. Same ways, if the currSum is greater than the maxSum, then update the et then and there.
+2) Divide and conquer algorithm can also be used here. Calculate max sum of left sub-array, max sum of right sub-array and the max sum of both the sub-arrays(going through middle) and return the max of these.
