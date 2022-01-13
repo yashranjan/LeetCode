@@ -1,1 +1,1 @@
-​
+1) For calculating the indices of the sub-array, keep two variables, say st and et, and whenever you get currSum as 0(before adding the curr value to it) update st as the curr index. Same ways, if the currSum is greater than the maxSum, then update the et then and there.
