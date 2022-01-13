@@ -1,1 +1,1 @@
-​
+1) Go from left to right maintaining the minimum value seen so far, and update the maximum difference of current value and minimum value in a variable
