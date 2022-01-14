@@ -1,1 +1,1 @@
-​
+1) Maintain an index variable to skip the whitespaces at the beginning, check if there's a +/- sign, and to traverse the digits. For calculating the answer, do for every digit, `ans = ans*10+dig`. Do check before doing the multiplication, wether or not its safe, if its going to overflow return INT_MAX or INT_MIN appropriately.
