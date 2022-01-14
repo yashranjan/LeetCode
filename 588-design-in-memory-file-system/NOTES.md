@@ -1,1 +1,1 @@
-​
+1) Make another class which will be a node in the file structure tree, and inside that use  **collections.defaultdict** to store its children, so that even if a key wont exist, defaultdict will create an empty node and the whole implementation can be simplified.
