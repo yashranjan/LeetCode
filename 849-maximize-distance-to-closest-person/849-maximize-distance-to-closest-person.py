@@ -14,7 +14,6 @@ class Solution:
             else:
                 suffix[i] = suffix[i+1]
         ans = 0
-        print(prefix, suffix)
         for i in range(n):
             if seats[i] == 0:
                 minSeat = math.inf
