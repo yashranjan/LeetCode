@@ -1,1 +1,2 @@
-​
+1) If in two-pointer appraoch, want to start from the beginning, one would have to copy the first m elements from first list and store it somewhere else.
+2) But if started from end, the above said space can be saved
