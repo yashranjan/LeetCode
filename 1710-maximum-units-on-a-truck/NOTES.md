@@ -1,1 +1,2 @@
-​
+1) Sort the list in non-increasing order based on the second value and then traverse and keep adding the value to a variable. TC - O(nlogn) SC - O(n)
+2) Maintain a list of 1000 elements(as this is the max size of numberOfUnitsPerBox) and then count the no. of boxes for each unitsPerBox value and then traverse from 1000 and keep on adding the value. TC - O(n) SC-O(1000) - O(1)
