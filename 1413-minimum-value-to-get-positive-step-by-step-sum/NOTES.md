@@ -1,1 +1,3 @@
-​
+1) Brute force approaches is to start from 1 and step-by-step keep it increasing till you find the current value feasible. TC - O(n^2m) since in the worst case max value can be `n*m`, m being the maximum element of the array.
+2) Brute force can be slightly modified with binary search to reduce the search for the feasible value to log(nm). TC - O(nlog(nm))
+3) Best approach is to keep a prefix sum and keep the min value of prefix sum at any point. If the min sum is negative, return that +1 else return 1.
