@@ -1,1 +1,1 @@
-​
+1) Use a combination of list and dictionary(to store value-index mapping) to achieve O(1) insert, delete and getRandom. A set can also be used to support first two in O(1) but it'll fail to do getRandom in O(1)
