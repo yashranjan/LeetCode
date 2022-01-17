@@ -1,1 +1,1 @@
-​
+1) Take 4 pointers, two on the s and two on the words. Then keep on comparing the characters and their length, if the length of a character in s is less than the maximum of 3 or its corresponding char's length in word, then its not strechy.
