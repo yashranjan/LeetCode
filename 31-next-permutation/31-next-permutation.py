@@ -8,7 +8,7 @@ class Solution:
         while r-1>=0 and nums[r]<=nums[r-1]:
             r -= 1
         if r-1<0:
-            nums.sort()
+            nums.reverse()
             return
         idx = r-1
         r = n-1
