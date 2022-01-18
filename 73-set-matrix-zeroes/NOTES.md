@@ -1,1 +1,3 @@
-​
+Appraoches:
+1. Use additional boolean matrices for row and col to store the information wether a particular row/col needs to be set to 0 or not. TC - O(MN) SC - O(M+N)
+2. Use the matrix's first row and column itself as markers to indicate wether all elements of the particular row or column should be set to 0. But, since matrix[0][0] may indicate first row and/or first column, use a different variable to store the information for the other side. While populating as well, start from matrix[1][1] and then traverse/fill the first row and/or first col.
