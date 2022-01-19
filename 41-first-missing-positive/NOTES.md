@@ -1,4 +1,4 @@
 Approaches:
 1. Use a hashset to store all the positive numbers found in the list and then traverse from 1 till the maximum positive number seen, and check wether or not that exists in the hashset. TC -O(n) SC-O(n)
 2. Use array as a hashmap. But before doing so, check if 1 already exists or not if it doesn't that's the answer, else replace all the negative values(including 0) and the values greater than n(since the answer will be either <=n or n+1) to 1. And then use the indices of the array as a key to mark wether a certain value is seen or not. After that, traverse all the indices and if any index has a positive value, then that index is the answer. TC - O(n) SC-O(1) NOTE: This will destory the array.
-3.
+3. To not destroy the array, swap the elements which are not required to the end and the elements which are required to their valid position. The answer is last such valid index+1. TC-O(n) SC-O(1)
