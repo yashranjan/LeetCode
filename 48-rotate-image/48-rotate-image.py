@@ -3,16 +3,13 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        n, m = len(matrix), len(matrix[0])
+        n = len(matrix)
         
-        currRow = currCol = 0
-        while currRow < (n+1)//2:
-            currCol = 0
-            while currCol < (m)//2:
-                fourLocs = [(currRow, currCol), (currCol, n-1-currRow), (n-1-currRow, m-1-currCol), (m-1-currCol, currRow)]
-                fourVals = [matrix[fourLocs[-1][0]][fourLocs[-1][1]]] + [matrix[i][j] for i,j in fourLocs[:-1]]
-                for (x,y),val in zip(fourLocs, fourVals):
-                    matrix[x][y] = val
-                currCol += 1
-            currRow += 1
+        for i in range(n//2 + n%2):
+            for j in range(n//2):
+                tmp = matrix[n-1-j][i]
+                matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
+                matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
+                matrix[j][n-1-i] = matrix[i][j]
+                matrix[i][j] = tmp
             
