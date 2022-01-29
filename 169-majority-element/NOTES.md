@@ -1,2 +1,6 @@
-1. Boyer-Moore Voting Algo. Takes O(1) space and O(n) time.
-2. Bit-manip is also nice O(n*32). Count set bits in ith bit in all elements. If its majority, set it in your candidate as well.
+Approaches:
+1. Brute - TC O(n2)
+2. Sorting - middle element will be major TC - O(nlogn) SC - O(n)
+3. Hashmap - TC - O(n) SC - O(n)
+4. Boyer-Moore voting algo - It works on the fact that if we discard an equal number of majority and minority elements from an array, the remaining suffix will still have the same majority element. TC - O(n) SC - O(1)
+5. Bit-manip - For every bit, count if its occuring more than majority, if yes, it's gonna be set  in the majority element as well. TC - O(n) SC - O(1)
