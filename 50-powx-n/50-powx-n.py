@@ -1,11 +1,12 @@
 class Solution:
     def multiply(self, x, n):
-        if n==1:
-            return x
-        ans = self.multiply(x, n//2)
-        ans *= ans
-        if n%2==1:
-            ans *= x
+        ans = 1
+        curr = x
+        while n:
+            if (n%2) == 1:
+                ans = ans*curr
+            curr *= curr
+            n //= 2
         return ans
     
     def myPow(self, x: float, n: int) -> float:
