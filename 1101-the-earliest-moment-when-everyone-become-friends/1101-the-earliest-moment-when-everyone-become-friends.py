@@ -17,7 +17,6 @@ class Solution:
         for log in logs:
             a, b= log[1], log[2]
             union(a, b)
-            print(parents)
             if len([i for i in range(n) if i==parents[i]]) == 1:
                 ans = log[0]
                 break
