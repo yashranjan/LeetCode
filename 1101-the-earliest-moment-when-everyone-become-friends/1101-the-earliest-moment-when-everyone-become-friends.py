@@ -9,15 +9,19 @@ class Solution:
         def union(a, b):
             a = find(a)
             b = find(b)
+            if a==b: return False
             parents[b] = a
+            return True
         
         parents = [i for i in range(n)]
         logs.sort(key = lambda x: x[0])
         ans = -1
+        grpCnt = n
         for log in logs:
             a, b= log[1], log[2]
-            union(a, b)
-            if len([i for i in range(n) if i==parents[i]]) == 1:
+            if union(a, b):
+                grpCnt -= 1
+            if grpCnt == 1:
                 ans = log[0]
                 break
 
