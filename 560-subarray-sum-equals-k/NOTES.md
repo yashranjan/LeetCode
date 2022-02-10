@@ -1,1 +1,1 @@
-1) Keep on accumulating the running sum from the starting and store that sum with its occurrence in a dictionary. Everytime if you encounter a sum which equals k or if (curr_sum-k) exists in the dictionary, increment ans by either 1 or the no. of occ. of curr_sum-k, respec. It works because the dictionary stores all the subarray sums till the ith index, and if at ith index sum's difference with k exist in the dictionary, that means that the prefix sum till ith index-prefix sum till that index is nothing but k. TC - O(n) SC - O(n)
+​
