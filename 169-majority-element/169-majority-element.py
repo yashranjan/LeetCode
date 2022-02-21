@@ -1,12 +1,13 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        ans = 0
-        n = len(nums)
-        for i in range(32):
-            cnt = len([1 for j in nums if j&(1<<i)>0])
-            if cnt > (n-cnt):
-                if i==31:
-                    ans = -((1<<31)-ans)
-                else:
-                    ans |= (1<<i)
-        return ans
+        majorityElement = math.inf
+        majorityElementCount = 0
+        for i in nums:
+            if majorityElementCount == 0:
+                majorityElement = i
+                majorityElementCount = 1
+            elif i != majorityElement:
+                majorityElementCount -= 1
+            else:
+                majorityElementCount += 1
+        return majorityElement
