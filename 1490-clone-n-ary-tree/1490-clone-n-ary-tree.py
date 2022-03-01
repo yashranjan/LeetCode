@@ -8,13 +8,4 @@ class Node:
 
 class Solution:
     def cloneTree(self, root: 'Node') -> 'Node':
-        if not root:
-            return None
-
-        currRoot = Node(root.val)
-        
-        for child in root.children:
-            newChild = self.cloneTree(child)
-            currRoot.children.append(newChild)
-        
-        return currRoot
+        return None if not root else Node(root.val, None if not root.children else list(map(self.cloneTree, root.children)))
