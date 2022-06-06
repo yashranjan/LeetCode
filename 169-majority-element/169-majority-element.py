@@ -1,10 +1,15 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        hashMap = defaultdict(int)
+        major, majorFreq = None, 0
         for i in nums:
-            hashMap[i] += 1
-        major = len(nums)//2
-        for key, value in hashMap.items():
-            if value > major:
-                return key
-        return -1
+            if major is None:
+                major = i
+                majorFreq += 1
+            elif i == major:
+                majorFreq += 1
+            else:
+                majorFreq -= 1
+            if majorFreq == 0:
+                major, majorFreq = None, 0
+        
+        return major
