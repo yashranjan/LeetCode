@@ -1,13 +1,10 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        majorityElement = math.inf
-        majorityElementCount = 0
+        hashMap = defaultdict(int)
         for i in nums:
-            if majorityElementCount == 0:
-                majorityElement = i
-                majorityElementCount = 1
-            elif i != majorityElement:
-                majorityElementCount -= 1
-            else:
-                majorityElementCount += 1
-        return majorityElement
+            hashMap[i] += 1
+        major = len(nums)//2
+        for key, value in hashMap.items():
+            if value > major:
+                return key
+        return -1
