@@ -3,14 +3,25 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        first, second = m-1, n-1
-        curr = m+n-1
-        for p in range(n+m-1, -1, -1):
-            if second<0:
-                break
-            if first>=0 and nums1[first]>=nums2[second]:
-                nums1[p] = nums1[first]
-                first -= 1
+        currIdx = m+n-1
+        firstEnd = m-1
+        secondEnd = n-1
+        
+        while firstEnd>=0 and secondEnd>=0:
+            val1, val2 = nums1[firstEnd], nums2[secondEnd]
+            if val1 <= val2:
+                nums1[currIdx] = val2
+                currIdx, secondEnd = currIdx-1, secondEnd-1
             else:
-                nums1[p] = nums2[second]
-                second -= 1
+                nums1[currIdx] = val1
+                currIdx, firstEnd = currIdx-1, firstEnd-1
+        
+        while firstEnd>=0:
+            nums1[currIdx] = nums1[firstEnd]
+            currIdx, firstEnd = currIdx-1, firstEnd-1
+        
+        while secondEnd>=0:
+            nums1[currIdx] = nums2[secondEnd]
+            currIdx, secondEnd = currIdx-1, secondEnd-1
+        
+        
