@@ -11,8 +11,7 @@ class Solution:
             if val == 0:
                 nums[curr], nums[l] = nums[l], val 
                 l += 1
-                if curr == l-1:
-                    curr += 1
+                curr += 1
             elif val == 1:
                 curr += 1
             else:
