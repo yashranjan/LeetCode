@@ -3,15 +3,16 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        curr, l, r = 0, 0, len(nums)-1
+        countAll = [0]*3
+        for i in nums:
+            countAll[i] += 1
         
-        while curr<=r:
-            if nums[curr]==1: 
-                curr+=1
-            elif nums[curr]==0:
-                nums[curr], nums[l] = nums[l], nums[curr]
-                curr, l = curr+1, l+1
-            elif nums[curr]==2:
-                nums[curr], nums[r] = nums[r], nums[curr]
-                r-=1
+        currInd = 0
+        for idx, val in enumerate(countAll):
+            freq = val
+            while freq:
+                nums[currInd] = idx
+                currInd += 1
+                freq -= 1
+        
         
