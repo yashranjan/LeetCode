@@ -1,17 +1,44 @@
+class Bucket:
+    def __init__(self):
+        self.bucket = []
+        
+    def put(self, key, val):
+        found = 0
+        for item in self.bucket:
+            if item[0] == key:
+                item[1] = val
+                found = 1
+        if not found:
+            self.bucket.append([key, val])
+    
+    def get(self, key):
+        ans = -1
+        for k, v in self.bucket:
+            if k == key:
+                ans = v
+                break
+        return ans
+    
+    def remove(self, key):
+        for item in self.bucket:
+            if item[0] == key:
+                item[1] = -1
+
+    
 class MyHashMap:
 
     def __init__(self):
-        self.tmpDict = {}
+        self.hashKey = 2069
+        self.hashMap = [Bucket() for i in range(self.hashKey)]
 
     def put(self, key: int, value: int) -> None:
-        self.tmpDict[key] = value
+        self.hashMap[key%self.hashKey].put(key, value)
 
     def get(self, key: int) -> int:
-        return self.tmpDict.get(key, -1)
+        return self.hashMap[key%self.hashKey].get(key)
 
     def remove(self, key: int) -> None:
-        if key in self.tmpDict:
-            del self.tmpDict[key]
+        self.hashMap[key%self.hashKey].remove(key)
 
 
 # Your MyHashMap object will be instantiated and called as such:
