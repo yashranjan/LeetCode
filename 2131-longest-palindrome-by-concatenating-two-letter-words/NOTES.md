@@ -1,1 +1,1 @@
-​
+Trick is to understand the odd-even length of palindrome that can be constructed
