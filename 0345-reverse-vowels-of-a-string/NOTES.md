@@ -1,1 +1,1 @@
-​
+Use 2-pointers, left one will hold the index of the vowel from LHS and right one will hold the index from the RHS, and then swap and repeat the process from the next index
