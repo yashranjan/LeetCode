@@ -1,1 +1,1 @@
-1) The trick is to understand the effect of K to string S. If K==1, then the string can only be rotated anti-clockwise and result will be smallest such permutation. And if K>1, then the string can be arranged in any fashion, and thus smallest string can be formed by re-arranging characters.
+​
