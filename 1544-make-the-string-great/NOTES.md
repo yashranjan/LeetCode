@@ -1,1 +1,1 @@
-​
+1) The trick is to keep on deleting the adjacent bad pair of characters. Any such pair can be deleted, repeatdely.
