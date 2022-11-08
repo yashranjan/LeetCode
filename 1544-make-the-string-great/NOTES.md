@@ -1,1 +1,2 @@
-1) The trick is to keep on deleting the adjacent bad pair of characters. Any such pair can be deleted, repeatdely.
+1) The trick is to keep on deleting the adjacent bad pair of characters. Any such pair can be deleted, repeatdely. This can be acheived with the help of 2 pointers, one will point to the current element in question, and second will point to the end of the string.
+2)  Stack can also be used. Keep on maintaining the last character encountered, and if the current character form a bad pair with the last one, remove both of them.
