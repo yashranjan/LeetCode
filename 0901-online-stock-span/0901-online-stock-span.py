@@ -9,4 +9,5 @@ class StockSpanner:
             ans+=self.price_stk.pop()[1]
         
         self.price_stk.append([price, ans])
+        print(self.price_stk)
         return ans
