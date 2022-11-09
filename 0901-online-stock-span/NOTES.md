@@ -1,1 +1,1 @@
-​
+1) Trick is to realise that to get answer for every element, the answer will be based on the answer to the just bigger element which is already seen. This can be achieved by maintaining a monotonous stack(decreasing order) such that if the current price is greater than the top of the stack, then the top of the stack will keep getting popped-off. TC - O(1) SC-O(n)
