@@ -1,1 +1,1 @@
-​
+1) 2-pointers - Take two pointers, one to iterate over all the elements and one to point to the current location where the unique element needs to be written. For the pointer that will iterate over the elements, keep skipping it till the time it's same as the previous element. If it's not, insert the previous element(which is unequal) at the second pointer, and increment both the pointers. TC - O(n) SC - O(1)
