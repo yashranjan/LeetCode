@@ -42,12 +42,17 @@
 #        """
 
 class Solution:
-    def depthSum(self, nestedList: List[NestedInteger], depth=1) -> int:
+    def depthSum(self, nestedList: List[NestedInteger]) -> int:
         ans = 0
-        for nestedInteger in nestedList:
-            if nestedInteger.isInteger():
-                ans += nestedInteger.getInteger()*depth
-            else:
-                ans += self.depthSum(nestedInteger.getList(), depth+1)
+        currInd = 0
+        queue = [(nestedList, 1)]
+        while currInd<len(queue):
+            currInt, currDepth = queue[currInd]
+            for nestedInt in currInt:
+                if nestedInt.isInteger():
+                    ans += nestedInt.getInteger()*currDepth
+                else:
+                    queue.append((nestedInt.getList(), currDepth+1))
+            currInd += 1
         return ans
         
