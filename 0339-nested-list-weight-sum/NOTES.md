@@ -1,1 +1,1 @@
-​
+1) Recursively calculate sum of each depth. TC - O(N) SC - O(N), where N is total elements in the list
