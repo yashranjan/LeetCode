@@ -1,1 +1,1 @@
-​
+1) Graph-based: Form an undirected graph between all the coordinates which are either on same x-axis or y-axis. Then, calculate the number of connected components in the graph(as in that connected component all but one coordinates can be removed) and subtract that with the total number of coordinates present. TC - O(n2+n) SC - O(n)
