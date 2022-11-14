@@ -33,6 +33,4 @@ class Solution:
     
     def removeStones(self, stones: List[List[int]]) -> int:
         graph = self.make_graph(stones)
-        conn = self.conn_comps(graph)
-        print(conn)
-        return len(stones)-conn
+        return len(stones)-self.conn_comps(graph)
