@@ -10,7 +10,7 @@ class Solution:
     def guessNumber(self, n: int) -> int:
         a, b = 1, n+1
         while True:
-            num = randint(a, b) 
+            num = (a+b)//2
             ans = guess(num)
             if ans==0:
                 return num
