@@ -3,14 +3,14 @@ class Solution:
         area_of_a = (ay2 - ay1) * (ax2 - ax1)
         area_of_b = (by2 - by1) * (bx2 - bx1)
         
-        # left = max(ax1, bx1)
         left = ax1 if ax1>bx1 else bx1
-        # right = min(ax2, bx2)
         right = ax2 if ax2<bx2 else bx2
         x_overlap = right - left
 
-        top = min(ay2, by2)
-        bottom = max(ay1, by1)
+        # top = min(ay2, by2)
+        # bottom = max(ay1, by1)
+        top = ay2 if ay2<by2 else by2
+        bottom = ay1 if ay1>by1 else by1
         y_overlap = top - bottom
 
         area_of_overlap = 0
