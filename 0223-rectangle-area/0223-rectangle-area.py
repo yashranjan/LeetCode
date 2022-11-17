@@ -7,8 +7,6 @@ class Solution:
         right = ax2 if ax2<bx2 else bx2
         x_overlap = right - left
 
-        # top = min(ay2, by2)
-        # bottom = max(ay1, by1)
         top = ay2 if ay2<by2 else by2
         bottom = ay1 if ay1>by1 else by1
         y_overlap = top - bottom
