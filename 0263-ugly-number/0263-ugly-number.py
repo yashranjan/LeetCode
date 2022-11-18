@@ -5,7 +5,4 @@ class Solution:
         for i in [2, 3, 5]:
             while n%i==0:
                 n//=i
-        if n>1:
-            return False
-        return True
-                
+        return n==1
