@@ -1,10 +1,13 @@
 class Solution:
     def twoSumLessThanK(self, nums: List[int], k: int) -> int:
         max_ans = -1
-        hash_set = set()
-        for i in nums:
-            for j in hash_set:
-                if i+j<k:
-                    max_ans = max(max_ans, i+j)
-            hash_set.add(i)
+        nums.sort()
+        left, right = 0, len(nums)-1
+        while left<right:
+            curr_sum = nums[left]+nums[right]
+            if curr_sum<k:
+                max_ans = max(max_ans, curr_sum)
+                left += 1
+            else:
+                right -= 1
         return max_ans
