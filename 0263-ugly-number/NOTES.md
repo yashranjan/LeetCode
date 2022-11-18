@@ -1,1 +1,1 @@
-1) Hint: Remove all the 2s, 3s and 5s from the number. If the number is still >1, it's not an ugly number. Also, if n<=0, it's not an ungly number(since any one of the prime factor will be a negative number). TC - O(sqrt(n)) TC - O(1)
+1) Hint: Remove all the 2s, 3s and 5s from the number. If the number is still >1, it's not an ugly number. Also, if n<=0, it's not an ungly number(since any one of the prime factor will be a negative number). TC - O(log(N)) TC - O(1)
