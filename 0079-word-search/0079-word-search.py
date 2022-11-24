@@ -5,7 +5,7 @@ class Solution:
         
         curr = board[x][y]
         board[x][y] = '-'
-        for d_x, d_y in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
+        for d_x, d_y in [(0, 1), (-1, 0), (0, -1), (1, 0)]:
             n_x, n_y = x+d_x, y+d_y
             if n_x>=0 and n_x<m and n_y>=0 and n_y<n and word[idx]==board[n_x][n_y]:
                 if self.solve(board, m, n, n_x, n_y, word, idx+1):
