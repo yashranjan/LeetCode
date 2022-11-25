@@ -1,1 +1,2 @@
-​
+1) Monotonic increasing stack - Maintain a monotonically increasing stack. For every value that's being pushed, check if it's smaller than top. If it's then it's fine. Else, keep popping the top until the current value is bigger than the top or stack is empty. For each popped value, calculate its contribution to the ans, wiz., the (curr_idx-popped_idx)*(popped_idx-top_idx)*popped_value. This essentially means that the popped value will be the smallest in the sub-range b/w the current value and the top. TC - O(n) SC - O(n)
+2) Monoonic increasing stack + DP - TBD TC - O(n) SC - O(n)
