@@ -14,8 +14,8 @@ class Solution:
                     curr = arr[curr_ind]
                     r = i
                     l = stk[-1] if len(stk) else -1
-                    contri = ((r-curr_ind)*(curr_ind-l)*curr)%mod
-                    ans = (ans%mod + contri%mod)%mod
+                    contri = ((r-curr_ind)*(curr_ind-l)*curr)
+                    ans += contri
                 stk.append(i)
             else:
                 stk.append(i)
@@ -24,7 +24,7 @@ class Solution:
             curr = arr[curr_ind]
             r = n
             l = stk[-1] if len(stk) else -1
-            contri = ((r-curr_ind)*(curr_ind-l)*curr)%mod
-            ans = (ans%mod + contri%mod)%mod
+            contri = ((r-curr_ind)*(curr_ind-l)*curr)
+            ans += contri
         
-        return ans
+        return ans%mod
