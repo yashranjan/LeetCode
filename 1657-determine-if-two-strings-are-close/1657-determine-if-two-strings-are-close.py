@@ -5,16 +5,20 @@ class Solution:
         ans = True
         cnt_dict_a = [0]*26
         cnt_dict_b = [0]*26
-        
+        word_bit_a = word_bit_b = 0 
         for i in word1:
-            cnt_dict_a[ord(i)-ord('a')] += 1
+            cd = ord(i)-ord('a')
+            cnt_dict_a[cd] += 1
+            if cnt_dict_a[cd] == 1:
+                word_bit_a ^= (1<<cd)
+
         for i in word2:
-            cnt_dict_b[ord(i)-ord('a')] += 1
-        
-        keys_a = set(word1)
-        keys_b = set(word2)
+            cd = ord(i)-ord('a')
+            cnt_dict_b[cd] += 1
+            if cnt_dict_b[cd] == 1:
+                word_bit_b ^= (1<<cd)            
         
         values_a = sorted(cnt_dict_a)
         values_b = sorted(cnt_dict_b)
-        
-        return keys_a == keys_b and values_a == values_b
+        print(word_bit_a, word_bit_b)
+        return word_bit_a == word_bit_b and values_a == values_b
