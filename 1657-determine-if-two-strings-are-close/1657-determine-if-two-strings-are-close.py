@@ -20,5 +20,5 @@ class Solution:
         
         values_a = sorted(cnt_dict_a)
         values_b = sorted(cnt_dict_b)
-        print(word_bit_a, word_bit_b)
+
         return word_bit_a == word_bit_b and values_a == values_b
