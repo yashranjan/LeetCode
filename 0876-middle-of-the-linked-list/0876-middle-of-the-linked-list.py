@@ -9,6 +9,4 @@ class Solution:
         while fast.next and fast.next.next:
             slow = slow.next
             fast = fast.next.next
-        if not fast.next:
-            return slow
-        return slow.next
+        return slow if not fast.next else slow.next
