@@ -17,8 +17,4 @@ class Solution:
         return ans
         
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
-        leaves1 = leaves2 = []
-        leaves1 = self.getLeaves(root1)
-        leaves2 = self.getLeaves(root2)
-        
-        return leaves1 == leaves2
+        return self.getLeaves(root1) == self.getLeaves(root2)
