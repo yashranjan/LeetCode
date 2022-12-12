@@ -1,8 +1,7 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        if n<=2:
-            return n
-        first, second = 1, 2
-        for i in range(3, n+1):
-            first, second = second, first+second
-        return second
+        sqrt5 = math.sqrt(5)
+        phi = (1+sqrt5)/2
+        psi = (1-sqrt5)/2
+        return int((math.pow(phi, n+1)-math.pow(psi, n+1))//sqrt5)
+        
