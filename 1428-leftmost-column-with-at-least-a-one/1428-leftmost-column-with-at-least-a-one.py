@@ -27,6 +27,7 @@ class Solution:
         rows, cols = binaryMatrix.dimensions()
         
         for row in range(rows):
-            ans = min(ans, getOnePos(binaryMatrix, row, cols))
+            h = ans if ans!=float('inf') else cols
+            ans = min(ans, getOnePos(binaryMatrix, row, h))
         
         return ans if not ans==float('inf') else -1
