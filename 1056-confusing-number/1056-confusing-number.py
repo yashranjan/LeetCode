@@ -2,12 +2,14 @@ class Solution:
     def confusingNumber(self, n: int) -> bool:
         rotMap = [0, 1, -1, -1, -1, -1, 9, -1, 8, 6] 
         
-        n = str(n)
-        ans = []
-        for i in n:
-            idx = ord(i)-ord('0')
-            val = rotMap[idx]
+        curr = n
+        res = 0
+        while curr>=1:
+            dig = curr%10
+            curr //= 10
+            val = rotMap[dig]
             if val == -1:
                 return False
-            ans.append(chr(ord('0')+val))
-        return n != ''.join(ans[::-1])
+            res = res*10+val
+        
+        return n!=res
