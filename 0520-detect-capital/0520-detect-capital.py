@@ -5,8 +5,4 @@ class Solution:
             if 'A'<=i<='Z':
                 cntCapitals += 1
         
-        if cntCapitals==len(word) or not cntCapitals:
-            return True
-        if 'A'<=word[0]<='Z' and cntCapitals==1:
-            return True
-        return False
+        return cntCapitals==len(word) or not cntCapitals or ('A'<=word[0]<='Z' and cntCapitals==1)
