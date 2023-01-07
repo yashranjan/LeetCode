@@ -5,8 +5,9 @@ class Solution:
         totTank, currTank = 0, 0
         stStation = 0
         for i in range(n):
-            totTank += gas[i]-cost[i]
-            currTank += gas[i]-cost[i]
+            val = gas[i]-cost[i]
+            totTank += val
+            currTank += val
             if currTank<0:
                 stStation = i+1
                 currTank = 0
