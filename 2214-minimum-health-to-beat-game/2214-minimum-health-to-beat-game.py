@@ -1,3 +1,5 @@
 class Solution:
     def minimumHealth(self, damage: List[int], armor: int) -> int:
-        return sum(damage)-min(max(damage), armor)+1
+        maxDam = max(damage)
+        sumDam = sum(damage)
+        return sumDam-min(maxDam, armor)+1
