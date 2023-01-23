@@ -1,15 +1,12 @@
 class Solution:
     def findJudge(self, n: int, trust: List[List[int]]) -> int:
-        isJudge = dict()
-        for i in range(1,n+1):
-            isJudge[i] = []
-        trustCnt = [0]*(n+1)
-
-        for i,j in trust:
-            isJudge[i].append(j)
-            trustCnt[j]+=1
-        for k,v in isJudge.items():
-            if len(v)==0 and trustCnt[k]==n-1:
-                return k
         
+        isJudge = [0]*(n+1)
+        for i,j in trust:
+            isJudge[i]-=1
+            isJudge[j]+=1
+        
+        for judge in range(1, n+1):
+            if isJudge[judge]==n-1:
+                return judge
         return -1
