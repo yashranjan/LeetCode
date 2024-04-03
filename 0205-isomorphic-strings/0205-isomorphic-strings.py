@@ -4,32 +4,19 @@ class Solution:
         t_lst = list(t)
         
         curr_cnt = 0
-        char_map = dict() # type: (str, int)
+        char_map_1 = dict()
+        char_map_2 = dict()
         
-        for idx, c in enumerate(s_lst):
-            char_cnt = 0
-            if c not in char_map:
-                char_map[c] = curr_cnt
+        for first_c, second_c in zip(s_lst, t_lst):
+            char_cnt_1 = char_cnt_2 = 0
+            if first_c not in char_map_1 and second_c not in char_map_2:
+                char_map_1[first_c] = curr_cnt
+                char_map_2[second_c] = curr_cnt
                 curr_cnt += 1
-            char_cnt = char_map[c]
-            s_lst[idx] = char_cnt
-        
-        char_map.clear()
-        curr_cnt = 0
-        
-        for idx, c in enumerate(t_lst):
-            char_cnt = 0
-            if c not in char_map:
-                char_map[c] = curr_cnt
-                curr_cnt += 1
-            char_cnt = char_map[c]
-            t_lst[idx] = char_cnt
-        
-        for (i, j) in zip(s_lst, t_lst):
-            if i!=j:
+            elif (first_c not in char_map_1 and second_c in char_map_2) or (first_c in char_map_1 and second_c not in char_map_2):
                 return False
-        
+            char_cnt_1 = char_map_1[first_c]
+            char_cnt_2 = char_map_2[second_c]
+            if char_cnt_1 != char_cnt_2:
+                return False        
         return True
-                
-                
-        
