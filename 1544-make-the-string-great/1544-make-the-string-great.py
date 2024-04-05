@@ -1,11 +1,16 @@
 class Solution:
     def makeGood(self, s: str) -> str:
-        i = 0
-        while i+1<len(s):
-            c, n = ord(s[i]), ord(s[i+1])
-            if c+32 == n or c-32 == n:
-                s = s[:i] + s[i+2:]
-                i = max(0, i-1)
+        i = 1
+        stk = [s[0]]
+        while i<len(s):
+            curr_ord = ord(s[i])
+            if stk:
+                last_ord = ord(stk[-1])
+                if curr_ord+32 == last_ord or curr_ord-32 == last_ord:
+                    stk.pop()
+                else:
+                    stk.append(s[i])
             else:
-                i += 1
-        return s
+                stk.append(s[i])
+            i += 1
+        return ''.join(stk)
