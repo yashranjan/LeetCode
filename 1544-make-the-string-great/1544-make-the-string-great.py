@@ -3,13 +3,10 @@ class Solution:
         i = 1
         stk = [s[0]]
         while i<len(s):
-            curr_ord = ord(s[i])
-            if stk:
-                last_ord = ord(stk[-1])
-                if curr_ord+32 == last_ord or curr_ord-32 == last_ord:
-                    stk.pop()
-                else:
-                    stk.append(s[i])
+            if not stk:
+                stk.append(s[i])
+            elif abs(ord(s[i]) - ord(stk[-1])) == 32:
+                stk.pop()
             else:
                 stk.append(s[i])
             i += 1
