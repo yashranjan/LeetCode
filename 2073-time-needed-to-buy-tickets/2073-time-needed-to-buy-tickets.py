@@ -4,10 +4,7 @@ class Solution:
         gol_val = tickets[k]
         for i in range(len(tickets)):
             if i<=k:
-                ans += min(tickets[i], gol_val)
+                ans += min(tickets[i], tickets[k])
             else:
-                if tickets[i] >= gol_val:
-                    ans += gol_val-1
-                else:
-                    ans += tickets[i]
+                ans += min(tickets[k]-1, tickets[i])
         return ans
