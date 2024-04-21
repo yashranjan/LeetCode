@@ -6,13 +6,15 @@ class Solution:
             adjLst[s].append(e)
             adjLst[e].append(s)
         
-        stk = [source]
-        while stk:
-            curr = stk.pop()
+        q = [source]
+        qIdx = 0
+        while qIdx<len(q):
+            curr = q[qIdx]
+            qIdx += 1
             visited.add(curr)
             if curr == destination:
                 return True
             for dst in adjLst[curr]:
                 if dst not in visited:
-                    stk.append(dst)
+                    q.append(dst)
         return False            
